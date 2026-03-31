@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Install Selenium') {
+            steps {
+                bat 'pip install selenium'
+            }
+        }
+
+        stage('Run Test') {
+            steps {
+                bat 'py test_form.py'
+            }
+        }
+    }
+}
